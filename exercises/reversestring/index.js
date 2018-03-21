@@ -7,35 +7,35 @@
 //   reverse('Greetings!') === '!sgniteerG'
 
 module.exports = function reverse(str) {
-		// return solutionOne(str);
-    // return solutionTwo(str);
-		// return solutionThree(str);		
-		return solutionFour(str);
+	// return solutionOne(str);
+	// return solutionTwo(str);
+	// return solutionThree(str);		
+	return solutionFour(str);
 }
 
 function solutionOne(str) {
-    let result = '';
+	let result = '';
 
-    for (let i = str.length - 1; i >= 0; i--) 
-        result += str[i];
-    
-    return result;
+	for (let i = str.length - 1; i >= 0; i--) 
+			result += str[i];
+	
+	return result;
 }
 
 function solutionTwo(str) {
-	let reversed = '';
+let reversed = '';
 
-	for (let character of str) {
-		reversed = character + reversed;
-	}
+for (let character of str) {
+	reversed = character + reversed;
+}
 
-	return reversed;
+return reversed;
 }
 
 function solutionThree(str) {
-	return str.split('').reverse().join('');
+return str.split('').reverse().join('');
 } 
 
 function solutionFour(str) {
-	return str.split('').reduce((reversed, character) =>  character + reversed, '');
+return str.split('').reduce((reversed, character) =>  character + reversed, '');
 }

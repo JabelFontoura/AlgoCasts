@@ -1,1 +1,1 @@
-# Coding Challenges
+# Coding Exercises
