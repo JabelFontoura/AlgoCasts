@@ -8,6 +8,35 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n) {}
+// function fib(n) {
+//     const arr = [0, 1];
+
+//     for (let i = 1; i < n; i++)
+//         arr.push(arr[i] + arr[i - 1]);
+
+//     return arr[n];
+// } // Linear O(n)
+
+function slowFib(n) { 
+    if (n < 2)
+        return n;
+
+    return fib(n - 1) + fib(n - 2);
+}
+const fib = memoize(slowFib);
+
+function memoize(fn) {
+    const cache = {};
+
+    return function(...args) {
+        if (cache[args])
+            return cache[args];
+
+        const result = fn.apply(this, args);
+        cache[args] = result;
+
+        return result;
+    };
+}
 
 module.exports = fib;
